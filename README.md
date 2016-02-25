@@ -25,3 +25,4 @@ Run from source with ```php -S localhost:8000 index.php```
 - YML config.
 - Implement some special pages (all pages, etc).
 - Implement search (backend-specific implementation).
+- PHPUnit

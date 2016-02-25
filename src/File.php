@@ -1,6 +1,7 @@
 <?php
 
 namespace SiRe;
+use League\CommonMark\CommonMarkConverter;
 
 class File {
     public $name;
@@ -15,6 +16,7 @@ class File {
     }
 
     public function render() {
-        return "<pre>{$this->contents}</pre>";
+        $converter = new CommonMarkConverter();
+        return $converter->convertToHtml($this->contents);
     }
 }
