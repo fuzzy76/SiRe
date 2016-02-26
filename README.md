@@ -16,13 +16,14 @@ Run from source with ```php -S localhost:8000 index.php```
 
 ## Plans
 - Automatic checkout on empty repositories
-- Use Twig for templating.
+- Use templating (plates or twig).
+- .htaccess to run on apache
+- Install procedure with composer create-project
 - Support more backends (Evernote? Local directory? Scrape webpage? Dunno).
 - Support edit-links to repository provider (autodetect GitHub / BitBucket).
 - Support more filetypes (textile, html, txt, source code, etc).
-- Twig caching.
 - Page metadata header.
 - YML config.
 - Implement some special pages (all pages, etc).
 - Implement search (backend-specific implementation).
-- PHPUnit
+- PHPUnit tests
