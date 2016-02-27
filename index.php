@@ -1,6 +1,6 @@
 <?php
 
-use SiRe\Router;
+use Sire\Router;
 
 require __DIR__ . '/vendor/autoload.php'; // Composer autoloader
 require __DIR__ . '/config.php'; // SiRe configuration
@@ -9,7 +9,7 @@ $alerts = array();
 $router = new Router();
 
 // TODO use array key for name, loop/pop/whatever (get all backends)
-$backend = SiRe\BackendFactory::createBackend('default', $config['backend']['default']);
+$backend = Sire\BackendFactory::createBackend('default', $config['backend']['default']);
 $file = $router->process($backend);
 
 function dpm($var,$label="debug")
@@ -23,7 +23,7 @@ function dpm($var,$label="debug")
   <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex" />
-    <title>SiRe page</title>
+    <title>Sire page</title>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,7 +50,7 @@ body { padding-top: 60px; }
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">SiRe page<?php // TODO Add real page title both here and in head ?></a>
+          <a class="navbar-brand" href="/">Sire page<?php // TODO Add real page title both here and in head ?></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

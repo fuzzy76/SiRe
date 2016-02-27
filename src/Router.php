@@ -1,6 +1,6 @@
 <?php
 
-namespace SiRe;
+namespace Sire;
 
 class Router {
     function __construct()

@@ -1,4 +1,4 @@
-# SiRe - Site Renderer
+# Sire - A databaseless site rendering engine
 
 A small webapp in PHP for rendering a site from a backend of pages.
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiRe\Backend;
+namespace Sire\Backend;
 use GitElephant\Repository;
 
 class Git extends BackendBase {

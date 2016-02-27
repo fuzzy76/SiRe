@@ -1,6 +1,6 @@
 <?php
 
-namespace SiRe;
+namespace Sire;
 use League\CommonMark\CommonMarkConverter;
 
 class File {

@@ -1,7 +1,7 @@
 <?php
 
-namespace SiRe\Backend;
-use SiRe\File;
+namespace Sire\Backend;
+use Sire\File;
 
 class BackendBase {
 
