@@ -18,7 +18,7 @@ class Backend {
     }
 
     public function getDirectory() {
-        return 'data/backends/'.DIRECTORY_SEPARATOR.$this->name;
+        return 'data/backend';
     }
 
 

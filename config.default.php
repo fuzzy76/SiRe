@@ -6,12 +6,10 @@
 
 $config = array(
   'backend' => array(
-      'default' => array(
-          'type' => 'git',
-          'url' => 'https://github.com/fuzzy76/bashquote',
-          'repo' => 'git@github.com:fuzzy76/bashquote.git',
-          'frontpage' => 'README.md'
-      )
+      'type' => 'git',
+      'url' => 'https://github.com/fuzzy76/bashquote',
+      'repo' => 'git@github.com:fuzzy76/bashquote.git',
+      'frontpage' => 'README.md'
   )
 );
 
