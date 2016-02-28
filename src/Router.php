@@ -5,6 +5,12 @@ use Sire\Backend\Backend;
 use Sire\Filetype\File;
 
 class Router {
+
+    static $errors = array(
+        200 => "200 Ok",
+        403 => "403 Access denied",
+        404 => "404 Page not found"
+    );
     function __construct()
     {
     }
@@ -15,11 +21,16 @@ class Router {
 
     function process() {
         global $config;
-        // TODO use array key for name, loop/pop/whatever (get all backends)
         $backend = Backend::createBackend($config['backend']);
         $file = File::createFile($backend, $this->getPath());
-        $templates = new \League\Plates\Engine('template');
-        echo $templates->render('content', ['file' => $file]);
+        if ($file instanceof File) {
+            $templates = new \League\Plates\Engine('template');
+            echo $templates->render('content', ['file' => $file]);
+        } else {
+            header(self::$errors[$file]);
+            echo self::$errors[$file];
+        }
+
 
     }
 }

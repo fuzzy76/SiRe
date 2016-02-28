@@ -28,6 +28,14 @@ class Backend {
         }
     }
 
+    public function checkFile($filename) {
+        if (!file_exists($filename))
+            return 404; // File not found
+        if (!is_readable($filename))
+            return 403; // Access denied
+        return 200;
+    }
+
     public function getFileContents($filename) {
         return file_get_contents($this->getDirectory().DIRECTORY_SEPARATOR.$filename);
     }

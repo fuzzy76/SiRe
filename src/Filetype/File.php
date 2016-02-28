@@ -25,13 +25,17 @@ class File {
          if (!$name) {
              $name = $backend->getDefaultFile();
          }
-         $ext = self::parseExtension($name);
-         if ($ext) {
-             $type = ( isset(self::$extmap[$ext]) ? self::$extmap[$ext] : NULL);
-             if ($type) {
-                 return new $type($name, $backend);
+         $status = $backend->checkFile($name);
+         if ($status == 200) {
+             $ext = self::parseExtension($name);
+             if ($ext) {
+                 $type = ( isset(self::$extmap[$ext]) ? self::$extmap[$ext] : NULL);
+                 if ($type) {
+                     return new $type($name, $backend);
+                 }
              }
+             // TODO: static file fallback
          }
-         return NULL; // TODO: static file fallback
+         return $status;
     }
 }

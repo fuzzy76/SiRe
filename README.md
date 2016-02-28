@@ -18,7 +18,7 @@ Run from source with ```php -S localhost:8000 index.php```
 
 ## Plans
 (in prioritized order)
-- Improve error handling all over (404s specifically)
+- Linking to folders instead of files
 - Include a .htaccess file for hosting on Apache
 - Automatic checkout of git backends
 - Check that installation with composer create-project works, and write a tutorial based on it.
