@@ -1,6 +1,7 @@
 <?php
 
 use Sire\Router;
+use Sire\Backend\Backend;
 
 require __DIR__ . '/vendor/autoload.php'; // Composer autoloader
 require __DIR__ . '/config.php'; // SiRe configuration
@@ -9,7 +10,7 @@ $alerts = array();
 $router = new Router();
 
 // TODO use array key for name, loop/pop/whatever (get all backends)
-$backend = Sire\BackendFactory::createBackend('default', $config['backend']['default']);
+$backend = Backend::createBackend('default', $config['backend']['default']);
 $file = $router->process($backend);
 
 function dpm($var,$label="debug")

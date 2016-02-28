@@ -3,10 +3,13 @@
 namespace Sire\Backend;
 use Sire\File;
 
-class BackendBase {
+class Backend {
 
     public $name = '';
     public $backenddefs = array();
+    public static $backendmap = array(
+        'git' => 'Sire\Backend\Git'
+    );
 
     public function __construct($name, $backenddefs)
     {
@@ -21,6 +24,10 @@ class BackendBase {
     public function getFile($file) {
         $contents = file_get_contents($this->getDirectory().DIRECTORY_SEPARATOR.$file);
         return new File($file,  $contents);
+    }
+
+    static function createBackend($name, $backendDefs) {
+        return new self::$backendmap[$backendDefs['type']]($name, $backendDefs);
     }
 
 

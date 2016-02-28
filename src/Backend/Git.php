@@ -3,7 +3,7 @@
 namespace Sire\Backend;
 use GitElephant\Repository;
 
-class Git extends BackendBase {
+class Git extends Backend {
 
     public  $repo;
 
