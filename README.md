@@ -18,8 +18,8 @@ Run from source with ```php -S localhost:8000 index.php```
 
 ## Plans
 (in prioritized order)
-- Check that installation with composer create-project works, and write a tutorial based on it.
 - Create homepage for Sire, with Sire.
+- Proper installation tutorial.
 - Real documentation?
 - Use template engine for error pages
 - Fix initial cloning for git backend
