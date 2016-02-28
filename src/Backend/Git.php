@@ -7,9 +7,9 @@ class Git extends Backend {
 
     public  $repo;
 
-    public function __construct($name, $backenddefs)
+    public function __construct($backenddefs)
     {
-        parent::__construct($name, $backenddefs);
+        parent::__construct($backenddefs);
         $this->repo = new Repository($this->getDirectory());
     }
 

@@ -16,8 +16,10 @@ class Router {
     function process() {
         global $config;
         // TODO use array key for name, loop/pop/whatever (get all backends)
-        $backend = Backend::createBackend('default', $config['backend']['default']);
+        $backend = Backend::createBackend($config['backend']);
         $file = File::createFile($backend, $this->getPath());
-        return $file;
+        $templates = new \League\Plates\Engine('template');
+        echo $templates->render('content', ['file' => $file]);
+
     }
 }

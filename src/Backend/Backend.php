@@ -5,15 +5,13 @@ use Sire\Filetype\File;
 
 class Backend {
 
-    public $name = '';
     public $backenddefs = array();
     public static $backendmap = array(
         'git' => 'Sire\Backend\Git'
     );
 
-    public function __construct($name, $backenddefs)
+    public function __construct($backenddefs)
     {
-        $this->name = $name;
         $this->backenddefs = $backenddefs;
     }
 
@@ -26,8 +24,8 @@ class Backend {
         return file_get_contents($this->getDirectory().DIRECTORY_SEPARATOR.$filename);
     }
 
-    static function createBackend($name, $backendDefs) {
-        return new self::$backendmap[$backendDefs['type']]($name, $backendDefs);
+    static function createBackend($backendDefs) {
+        return new self::$backendmap[$backendDefs['type']]($backendDefs);
     }
 
 
