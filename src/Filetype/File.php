@@ -25,6 +25,9 @@ class File {
          if (!$name) {
              $name = $backend->getDefaultFile();
          }
+         if ($backend->isDirectory($name)) {
+             $name = $name . DIRECTORY_SEPARATOR . $backend->getDefaultFile();
+         }
          $status = $backend->checkFile($name);
          if ($status == 200) {
              $ext = self::parseExtension($name);

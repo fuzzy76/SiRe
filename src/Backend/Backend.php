@@ -19,6 +19,10 @@ class Backend {
         return 'data/backend';
     }
 
+    public function getFullPath($name) {
+        return $this->getDirectory().DIRECTORY_SEPARATOR.$name;
+    }
+
     public function getDefaultFile() {
         global $config;
         if (isset($config['backend']['frontpage'])) {
@@ -36,8 +40,12 @@ class Backend {
         return 200;
     }
 
+    public function isDirectory($name) {
+        return is_dir($name);
+    }
+
     public function getFileContents($filename) {
-        return file_get_contents($this->getDirectory().DIRECTORY_SEPARATOR.$filename);
+        return file_get_contents($this->getFullPath($filename));
     }
 
     static function createBackend($backendDefs) {

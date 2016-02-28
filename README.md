@@ -18,7 +18,6 @@ Run from source with ```php -S localhost:8000 index.php```
 
 ## Plans
 (in prioritized order)
-- Linking to folders instead of files
 - Support static filetype fallback (unidentified files served "as-is" with proper mimetype)
 - Add automatic pull on commit webhook
 - Support edit-links to repository provider (autodetect GitHub / BitBucket GIT repositories).
