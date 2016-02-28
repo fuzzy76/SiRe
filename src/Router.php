@@ -31,7 +31,7 @@ class Router {
             $backend->serveRaw($this->getPath());
         } else {
             // Error handling
-            header(self::$errors[$file]);
+            header("HTTP/1.0 " . self::$errors[$file]);
             echo self::$errors[$file];
         }
 
