@@ -1,6 +1,8 @@
 <?php
 
 namespace Sire;
+use Sire\Backend\Backend;
+use Sire\Filetype\File;
 
 class Router {
     function __construct()
@@ -11,7 +13,11 @@ class Router {
         return ltrim($_SERVER["REQUEST_URI"], '/');
     }
 
-    function process($backend) {
-        return $backend->getFile($this->getPath());
+    function process() {
+        global $config;
+        // TODO use array key for name, loop/pop/whatever (get all backends)
+        $backend = Backend::createBackend('default', $config['backend']['default']);
+        $file = File::createFile($backend, $this->getPath());
+        return $file;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace Sire\Backend;
-use Sire\File;
+use Sire\Filetype\File;
 
 class Backend {
 
@@ -21,9 +21,9 @@ class Backend {
         return 'data/backends/'.DIRECTORY_SEPARATOR.$this->name;
     }
 
-    public function getFile($file) {
-        $contents = file_get_contents($this->getDirectory().DIRECTORY_SEPARATOR.$file);
-        return new File($file,  $contents);
+
+    public function getFileContents($filename) {
+        return file_get_contents($this->getDirectory().DIRECTORY_SEPARATOR.$filename);
     }
 
     static function createBackend($name, $backendDefs) {
