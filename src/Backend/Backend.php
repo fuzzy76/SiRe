@@ -33,6 +33,7 @@ class Backend {
     }
 
     public function checkFile($filename) {
+        $filename = $this->getFullPath($filename);
         if (!file_exists($filename))
             return 404; // File not found
         if (!is_readable($filename))
