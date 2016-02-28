@@ -1,6 +1,22 @@
 {
+  "name" : "fuzzy76/sire",
   "type" : "project",
+  "description" : "A databaseless site rendering engine",
+  "keywords" : ["cms", "web"],
+  "homepage" : "http://github.com/fuzzy76/sire",
   "license" : "BSD-2-Clause",
+  "authors" : [
+    {
+      "name" : "Håvard Pedersen",
+      "email" : "fuzzy76@fuzzy76.net",
+      "homepage" : "http://fuzzy76.net/",
+      "role" : "Developer"
+    }
+  ],
+  "support" : {
+    "issues" : "https://github.com/fuzzy76/Sire/issues",
+    "source" : "https://github.com/fuzzy76/Sire"
+  },
   "require" : {
     "php" : ">=5.4.0",
     "league/plates": "3.*",
