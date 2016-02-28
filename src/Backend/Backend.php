@@ -25,8 +25,8 @@ class Backend {
 
     public function getDefaultFile() {
         global $config;
-        if (isset($config['backend']['frontpage'])) {
-            return $config['backend']['frontpage'];
+        if (isset($config['backend']['indexpage'])) {
+            return $config['backend']['indexpage'];
         } else {
             return "README";
         }

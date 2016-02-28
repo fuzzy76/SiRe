@@ -9,7 +9,7 @@ $config = array(
       'type' => 'git',
       'url' => 'https://github.com/fuzzy76/bashquote',
       'repo' => 'git@github.com:fuzzy76/bashquote.git',
-      'frontpage' => 'README.md'
+      'indexpage' => 'README.md'
   )
 );
 
