@@ -20,7 +20,16 @@ class Backend {
     }
 
     public function getFullPath($name) {
-        return $this->getDirectory().DIRECTORY_SEPARATOR.$name;
+        $fullpath = $this->getDirectory().DIRECTORY_SEPARATOR.$name;
+
+        $realfullpath = realpath($fullpath);
+        $realdirpath = realpath($this->getDirectory());
+        if (substr($realfullpath, 0, strlen($realdirpath)) === $realdirpath) {
+            // If the resulting file is inside the backend directory...
+            return $fullpath;
+        }
+        // Just return the index file. Might do an exception instead.
+        return $this->getFullPath($this->getDefaultFile());
     }
 
     public function getDefaultFile() {
