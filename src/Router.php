@@ -26,7 +26,11 @@ class Router {
         if ($file instanceof File) {
             $templates = new \League\Plates\Engine('template');
             echo $templates->render('content', ['file' => $file]);
+        } else if ($file == 200) {
+            // Asset fallback
+            $backend->serveRaw($this->getPath());
         } else {
+            // Error handling
             header(self::$errors[$file]);
             echo self::$errors[$file];
         }

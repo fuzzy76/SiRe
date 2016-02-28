@@ -49,6 +49,13 @@ class Backend {
         return file_get_contents($this->getFullPath($filename));
     }
 
+    public function serveRaw($name) {
+        $filename = $this->getFullPath($name);
+        header('Content-Type: ' . mime_content_type($filename));
+        header('Content-Length: ' . filesize($filename));
+        readfile($filename);
+    }
+
     static function createBackend($backendDefs) {
         return new self::$backendmap[$backendDefs['type']]($backendDefs);
     }

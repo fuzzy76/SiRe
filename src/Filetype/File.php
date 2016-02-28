@@ -37,7 +37,6 @@ class File {
                      return new $type($name, $backend);
                  }
              }
-             // TODO: static file fallback
          }
          return $status;
     }

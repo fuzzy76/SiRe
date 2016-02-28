@@ -18,11 +18,12 @@ Run from source with ```php -S localhost:8000 index.php```
 
 ## Plans
 (in prioritized order)
-- Support static filetype fallback (unidentified files served "as-is" with proper mimetype)
 - Add automatic pull on commit webhook
 - Support edit-links to repository provider (autodetect GitHub / BitBucket GIT repositories).
 - Check that installation with composer create-project works, and write a tutorial based on it.
 - Create homepage for Sire, with Sire.
+- Use template engine for error pages
+- Figure out a way to secure the file reading
 - Page metadata header (title etc).
 - Figure out a way to serve static files directly through .htaccess (atleast for some backends)
 - Support more backends (Local directory and Evernote are both high on the list).
