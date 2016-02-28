@@ -18,7 +18,6 @@ Run from source with ```php -S localhost:8000 index.php```
 
 ## Plans
 (in prioritized order)
-- Improve page titles
 - Improve "default file" handling.
 - Improve error handling all over (404s specifically)
 - Include a .htaccess file for hosting on Apache
