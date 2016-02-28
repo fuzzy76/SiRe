@@ -8,8 +8,8 @@ $config = array(
   'backend' => array(
       'type' => 'git',
       'url' => 'https://github.com/fuzzy76/bashquote',
-      'repo' => 'git@github.com:fuzzy76/bashquote.git',
-      'indexpage' => 'README.md'
+      'repo' => 'git@github.com:fuzzy76/sire-webpage.git',
+      'indexpage' => 'INDEX.md'
   )
 );
 

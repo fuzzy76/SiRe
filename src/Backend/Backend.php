@@ -29,7 +29,7 @@ class Backend {
             return $fullpath;
         }
         // Just return the index file. Might do an exception instead.
-        return $this->getFullPath($this->getDefaultFile());
+        return $this->getDirectory().DIRECTORY_SEPARATOR.$this->getDefaultFile();
     }
 
     public function getDefaultFile() {

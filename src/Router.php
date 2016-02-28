@@ -22,6 +22,13 @@ class Router {
     function process() {
         global $config;
         $backend = Backend::createBackend($config['backend']);
+        if (substr($this->getPath(), 0, 5) == 'sire/') {
+            // Sire internal page
+            $code = $this->internal(substr($this->getPath(), 5), $backend);
+            $this->handleStatus($code);
+            return;
+        }
+        // Regular request handling
         $file = File::createFile($backend, $this->getPath());
         if ($file instanceof File) {
             $templates = new \League\Plates\Engine('template');
@@ -31,10 +38,21 @@ class Router {
             $backend->serveRaw($this->getPath());
         } else {
             // Error handling
-            header("HTTP/1.0 " . self::$errors[$file]);
-            echo self::$errors[$file];
+            $this->handleStatus($file);
         }
+    }
 
+    function internal($path, $backend) {
+        if ($path == 'updatehook') {
+            return $backend->update();
+        } else {
+            return 404;
+        }
+    }
 
+    function handleStatus($code) {
+        // Error handling
+        header("HTTP/1.0 " . self::$errors[$code]);
+        echo self::$errors[$code];
     }
 }
