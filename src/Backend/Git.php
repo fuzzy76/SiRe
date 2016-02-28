@@ -12,5 +12,4 @@ class Git extends Backend {
         parent::__construct($backenddefs);
         $this->repo = new Repository($this->getDirectory());
     }
-
 }

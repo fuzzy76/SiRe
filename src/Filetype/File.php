@@ -22,6 +22,9 @@ class File {
     }
 
      static function createFile($backend, $name) {
+         if (!$name) {
+             $name = $backend->getDefaultFile();
+         }
          $ext = self::parseExtension($name);
          if ($ext) {
              $type = ( isset(self::$extmap[$ext]) ? self::$extmap[$ext] : NULL);

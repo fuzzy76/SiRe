@@ -19,6 +19,14 @@ class Backend {
         return 'data/backend';
     }
 
+    public function getDefaultFile() {
+        global $config;
+        if (isset($config['backend']['frontpage'])) {
+            return $config['backend']['frontpage'];
+        } else {
+            return "README";
+        }
+    }
 
     public function getFileContents($filename) {
         return file_get_contents($this->getDirectory().DIRECTORY_SEPARATOR.$filename);
