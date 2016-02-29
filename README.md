@@ -14,7 +14,7 @@ First version supports pages as markdown/commonmark and Git backend through [Pla
 ### How to
 1. ```composer create-project --stability dev fuzzy76/sire```
 2. ```composer install```
-3. Copy config.dist.php to config.php and edit the contents to suit your site.
+3. Copy config.default.php to config.php and edit the contents to suit your site.
 4. Create a folder data/backend which PHP has write permissions for, and check out your backend inside. This step will be automated later.
 5. Optionally add http://yoursite.com/sire/updatehook as a webhook to your Git provider.
 
