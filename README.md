@@ -2,27 +2,34 @@
 
 A small webapp in PHP for rendering a site from a backend of pages.
 
-First version with Git repositories as backend and only supports
-markdown / commonmark pages through static page look.
+First version supports pages as markdown/commonmark and Git backend through [Plates](http://platesphp.com) templates.
 
 ## Installation
 
-Clone and install dependencies with composer. I might provide complete
-tarballs at some point. Requirements: Git and a non-EOL'd version of
-PHP.
+### Requirements
+- [Composer](https://getcomposer.org)
+- git command available from PHP
+- PHP 5.4
 
-For now, check out your default backend repo under data/backend (this
-part will improve soon).
+### How to
+1. ```composer create-project --stability dev fuzzy76/sire```
+2. ```composer install```
+3. Copy config.dist.php to config.php and edit the contents to suit your site.
+4. Create a folder data/backend which PHP has write permissions for, and check out your backend inside. This step will be automated later.
+5. Optionally add http://yoursite.com/sire/updatehook as a webhook to your Git provider.
 
-Run from source with ```php -S localhost:8000 index.php```
+Release tarballs might be available at some point later. You can run directly from source with ```php -S localhost:8000 index.php```
 
-## Plans
-(in prioritized order)
+## Roadmap
+
+### v1.0
 - Create homepage for Sire, with Sire.
-- Proper installation tutorial.
 - Real documentation?
 - Use template engine for error pages
 - Fix initial cloning for git backend
+- Changeable themes
+
+### v1.1 (or later)
 - Page metadata header (title etc) for markdown.
 - Support edit-links to repository provider (autodetect GitHub / BitBucket GIT repositories).
 - Figure out a way to serve static files directly through .htaccess (atleast for some backends)
@@ -32,4 +39,3 @@ Run from source with ```php -S localhost:8000 index.php```
 - Implement search (backend-specific implementation).
 - Better configuration format (YML?)
 - PHPUnit tests
-
