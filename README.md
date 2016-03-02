@@ -11,6 +11,11 @@ First version supports pages as markdown/commonmark and Git backend through [Pla
 - git command available from PHP
 - PHP 5.4
 
+### Composer packages in use
+- [Plates](http://platesphp.com)
+- [gitElephant](https://github.com/matteosister/GitElephant)
+- [CommonMark](http://commonmark.thephpleague.com)
+
 ### How to
 1. ```composer create-project --stability dev fuzzy76/sire```
 2. Copy config.default.php to config.php and edit the contents to suit your site.
@@ -26,6 +31,7 @@ Optionally add http://yoursite.com/sire/updatehook as a webhook to your Git prov
 - Use template engine for error pages
 - Fix initial cloning for git backend
 - Changeable themes
+- Add license file (BSD 2-clause)
 
 ### v1.1 (or later)
 - Page metadata header (title etc) for markdown.
