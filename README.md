@@ -32,6 +32,7 @@ Optionally add http://yoursite.com/sire/updatehook as a webhook to your Git prov
 - Fix initial cloning for git backend
 - Changeable themes
 - Add license file (BSD 2-clause)
+- Use an open source router implementation (like [Aria.Router](http://auraphp.com/packages/Aura.Router/)).
 
 ### v1.1 (or later)
 - Page metadata header (title etc) for markdown.
